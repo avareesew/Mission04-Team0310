@@ -15,7 +15,7 @@ static char[] board = { '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
 do
 {
-    sc.PrintBoard();
+    sc.PrintBoard(board);
     GetUserChoice();
     CheckForGameEnd();
 
@@ -54,7 +54,7 @@ static void CheckForGameEnd()
 
     if (gameOver == true)
     {
-        sc.PrintBoard();
+        sc.PrintBoard(board);
 
         if (currentPlayer == 0)
         {
@@ -70,7 +70,7 @@ static void CheckForGameEnd()
 
     else if (Array.TrueForAll(board, c => c == 'X' || c == 'O'))
     {
-        sc.PrintBoard();
+        sc.PrintBoard(board);
         Console.WriteLine("It's a draw!");
         gameOver = true;
     }
